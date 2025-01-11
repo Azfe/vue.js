@@ -8,20 +8,22 @@
 <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <div id="app">{{ title }}</div>
+    <div id="app">
+        
+    </div>
 
     <script>
         const vm = Vue.createApp({
             data() {
                 return {
-                    title: 'Hello Vue',
-                    message: '<p>This is a message</p>'
-                }
-            },
+                    attr: "alt",
+                    img: "https://fastly.picsum.photos/id/1026/200/300.jpg?hmac=Thvj4aJ_VnAGT6DKAcy1yTs100zlstJTyImDWphGDFI"
+
+                };
+            },   
             template: `
-                <div v-once v-text="title"></div>
-                <div v-html="message"></div>
-            `
+                <img v-bind:[attr]="img" />
+            `        
         }).mount('#app');
         console.log(vm);
     </script>
