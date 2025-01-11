@@ -15,14 +15,12 @@
             data() {
                 return {
                     title: 'Hello Vue',
-                    message: 'This is a message'
+                    message: '<p>This is a message</p>'
                 }
             },
             template: `
-                <div>
-                    <h1>{{ title }}</h1>
-                    <p>{{ message }}</p>
-                </div>
+                <div v-once v-text="title"></div>
+                <div v-html="message"></div>
             `
         }).mount('#app');
         console.log(vm);
